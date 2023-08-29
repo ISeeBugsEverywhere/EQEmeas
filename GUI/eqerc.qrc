@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Icons/arrow.png</file>
+    <file>Icons/comport.png</file>
+    <file>Icons/connect.png</file>
+    <file>Icons/floppy.png</file>
+    <file>Icons/play.png</file>
+    <file>Icons/quit.png</file>
+    <file>Icons/spectrum.png</file>
+    <file>Icons/usb.png</file>
+  </qresource>
+</RCC>
