@@ -47,4 +47,4 @@ class Ui_eqeWindow(object):
         self.menuFile.setTitle(_translate("eqeWindow", "File"))
         self.actionQuit.setText(_translate("eqeWindow", "Quit"))
         self.actionQuit.setShortcut(_translate("eqeWindow", "Ctrl+Q"))
-import GUI.eqerc_rc
+import GUI.eqerc
