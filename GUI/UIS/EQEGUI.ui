@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1006</width>
-    <height>700</height>
+    <height>676</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,7 +20,7 @@
    <string>EQE</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="eqerc.qrc">
+   <iconset resource="../eqerc.qrc">
     <normaloff>:/Icons/Icons/spectrum.png</normaloff>:/Icons/Icons/spectrum.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -51,7 +51,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="eqerc.qrc">
+       <iconset resource="../eqerc.qrc">
         <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
       </property>
       <property name="iconSize">
@@ -90,7 +90,7 @@
            <string>Connect</string>
           </property>
           <property name="icon">
-           <iconset resource="eqerc.qrc">
+           <iconset resource="../eqerc.qrc">
             <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
           </property>
           <property name="iconSize">
@@ -177,7 +177,7 @@
              <string>Go</string>
             </property>
             <property name="icon">
-             <iconset resource="eqerc.qrc">
+             <iconset resource="../eqerc.qrc">
               <normaloff>:/Icons/Icons/play.png</normaloff>:/Icons/Icons/play.png</iconset>
             </property>
             <property name="iconSize">
@@ -268,7 +268,7 @@
     <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout">
       <property name="sizeConstraint">
-       <enum>QLayout::SetNoConstraint</enum>
+       <enum>QLayout::SetFixedSize</enum>
       </property>
       <item row="0" column="0">
        <widget class="QLabel" name="statuslabel">
@@ -369,7 +369,7 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="eqerc.qrc">
+       <iconset resource="../eqerc.qrc">
         <normaloff>:/Icons/Icons/configure.png</normaloff>:/Icons/Icons/configure.png</iconset>
       </property>
       <property name="iconSize">
@@ -383,7 +383,7 @@
     <item row="0" column="1" rowspan="4">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -486,7 +486,7 @@
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="eqerc.qrc">
+              <iconset resource="../eqerc.qrc">
                <normaloff>:/Icons/Icons/go-next.png</normaloff>:/Icons/Icons/go-next.png</iconset>
              </property>
              <property name="iconSize">
@@ -538,7 +538,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="eqerc.qrc">
+           <iconset resource="../eqerc.qrc">
             <normaloff>:/Icons/Icons/floppy.png</normaloff>:/Icons/Icons/floppy.png</iconset>
           </property>
           <property name="iconSize">
@@ -614,7 +614,7 @@
        <attribute name="title">
         <string>SETTINGS</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_11">
+       <layout class="QGridLayout" name="gridLayout_12">
         <item row="0" column="0">
          <layout class="QGridLayout" name="gridLayout_9">
           <item row="0" column="0">
@@ -674,36 +674,75 @@
          </layout>
         </item>
         <item row="1" column="0">
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>144</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0">
          <widget class="QGroupBox" name="groupBox_2">
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>300</height>
+            <height>180</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>180</height>
            </size>
           </property>
           <property name="title">
            <string>PINS &amp;&amp; RELAYS</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_10">
-           <item row="0" column="0">
-            <widget class="QRadioButton" name="radioButton">
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="radioButton_2">
              <property name="text">
-              <string>One Contact</string>
+              <string>Use Relays</string>
              </property>
             </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <layout class="QGridLayout" name="gridLayout_10">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="rel1">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="rel2">
+               <property name="text">
+                <string>2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QCheckBox" name="rel3">
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QCheckBox" name="rel4">
+               <property name="text">
+                <string>4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QCheckBox" name="rel5">
+               <property name="text">
+                <string>5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QCheckBox" name="rel6">
+               <property name="text">
+                <string>6</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item row="0" column="1">
             <widget class="QCheckBox" name="checkBox">
@@ -712,21 +751,44 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
-            <widget class="QComboBox" name="comboBox_3"/>
+           <item row="2" column="2">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>264</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
-           <item row="1" column="0">
-            <widget class="QRadioButton" name="radioButton_2">
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="radioButton">
              <property name="text">
-              <string>Use Relays</string>
+              <string>One Contact</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="Ui_relayForm" name="widget" native="true"/>
+           <item row="0" column="2">
+            <widget class="QComboBox" name="comboBox_3"/>
            </item>
           </layout>
          </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>240</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
@@ -755,7 +817,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">
    <property name="icon">
-    <iconset resource="eqerc.qrc">
+    <iconset resource="../eqerc.qrc">
      <normaloff>:/Icons/Icons/system-shutdown.png</normaloff>:/Icons/Icons/system-shutdown.png</iconset>
    </property>
    <property name="text">
@@ -767,7 +829,7 @@
   </action>
   <action name="actionConnect">
    <property name="icon">
-    <iconset resource="eqerc.qrc">
+    <iconset resource="../eqerc.qrc">
      <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
    </property>
    <property name="text">
@@ -782,15 +844,9 @@
    <header>pyqtgraph</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>Ui_relayForm</class>
-   <extends>QWidget</extends>
-   <header>relayWidget</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources>
-  <include location="eqerc.qrc"/>
+  <include location="../eqerc.qrc"/>
  </resources>
  <connections/>
 </ui>
