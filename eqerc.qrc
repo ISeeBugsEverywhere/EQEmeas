@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>GUI/Icons/arrow.png</file>
+    <file>GUI/Icons/comport.png</file>
+    <file>GUI/Icons/configure.png</file>
+    <file>GUI/Icons/connect.png</file>
+    <file>GUI/Icons/floppy.png</file>
+    <file>GUI/Icons/go-next.png</file>
+    <file>GUI/Icons/icon-free-download-11.jpg</file>
+    <file>GUI/Icons/media-floppy.png</file>
+    <file>GUI/Icons/play.png</file>
+    <file>GUI/Icons/quit.png</file>
+    <file>GUI/Icons/security-high.png</file>
+    <file>GUI/Icons/security-low.png</file>
+    <file>GUI/Icons/security-medium.png</file>
+    <file>GUI/Icons/system-run.png</file>
+    <file>GUI/Icons/system-shutdown.png</file>
+    <file>GUI/Icons/spectrum.png</file>
+    <file>GUI/Icons/usb.png</file>
+  </qresource>
+</RCC>

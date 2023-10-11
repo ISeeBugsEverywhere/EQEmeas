@@ -20,7 +20,7 @@
    <string>EQE</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../eqerc.qrc">
+   <iconset>
     <normaloff>:/Icons/Icons/spectrum.png</normaloff>:/Icons/Icons/spectrum.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -51,8 +51,8 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../eqerc.qrc">
-        <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
+       <iconset resource="../../eqerc.qrc">
+        <normaloff>:/Icons/GUI/Icons/connect.png</normaloff>:/Icons/GUI/Icons/connect.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -79,7 +79,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="0" column="0">
-         <widget class="QPushButton" name="connectBtn_2">
+         <widget class="QPushButton" name="connectBtnOriel">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -90,8 +90,8 @@
            <string>Connect</string>
           </property>
           <property name="icon">
-           <iconset resource="../eqerc.qrc">
-            <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
+           <iconset resource="../../eqerc.qrc">
+            <normaloff>:/Icons/GUI/Icons/connect.png</normaloff>:/Icons/GUI/Icons/connect.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -149,6 +149,9 @@
               <pointsize>24</pointsize>
              </font>
             </property>
+            <property name="locale">
+             <locale language="C" country="AnyCountry"/>
+            </property>
             <property name="maximum">
              <double>1200.000000000000000</double>
             </property>
@@ -177,8 +180,8 @@
              <string>Go</string>
             </property>
             <property name="icon">
-             <iconset resource="../eqerc.qrc">
-              <normaloff>:/Icons/Icons/play.png</normaloff>:/Icons/Icons/play.png</iconset>
+             <iconset resource="../../eqerc.qrc">
+              <normaloff>:/Icons/GUI/Icons/play.png</normaloff>:/Icons/GUI/Icons/play.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -369,8 +372,8 @@
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../eqerc.qrc">
-        <normaloff>:/Icons/Icons/configure.png</normaloff>:/Icons/Icons/configure.png</iconset>
+       <iconset resource="../../eqerc.qrc">
+        <normaloff>:/Icons/GUI/Icons/configure.png</normaloff>:/Icons/GUI/Icons/configure.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -486,8 +489,8 @@
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../eqerc.qrc">
-               <normaloff>:/Icons/Icons/go-next.png</normaloff>:/Icons/Icons/go-next.png</iconset>
+              <iconset resource="../../eqerc.qrc">
+               <normaloff>:/Icons/GUI/Icons/go-next.png</normaloff>:/Icons/GUI/Icons/go-next.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -538,8 +541,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../eqerc.qrc">
-            <normaloff>:/Icons/Icons/floppy.png</normaloff>:/Icons/Icons/floppy.png</iconset>
+           <iconset resource="../../eqerc.qrc">
+            <normaloff>:/Icons/GUI/Icons/floppy.png</normaloff>:/Icons/GUI/Icons/floppy.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -817,8 +820,8 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">
    <property name="icon">
-    <iconset resource="../eqerc.qrc">
-     <normaloff>:/Icons/Icons/system-shutdown.png</normaloff>:/Icons/Icons/system-shutdown.png</iconset>
+    <iconset resource="../../eqerc.qrc">
+     <normaloff>:/Icons/GUI/Icons/system-shutdown.png</normaloff>:/Icons/GUI/Icons/system-shutdown.png</iconset>
    </property>
    <property name="text">
     <string>Quit</string>
@@ -829,8 +832,8 @@
   </action>
   <action name="actionConnect">
    <property name="icon">
-    <iconset resource="../eqerc.qrc">
-     <normaloff>:/Icons/Icons/connect.png</normaloff>:/Icons/Icons/connect.png</iconset>
+    <iconset resource="../../eqerc.qrc">
+     <normaloff>:/Icons/GUI/Icons/connect.png</normaloff>:/Icons/GUI/Icons/connect.png</iconset>
    </property>
    <property name="text">
     <string>Connect</string>
@@ -846,7 +849,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../eqerc.qrc"/>
+  <include location="../../eqerc.qrc"/>
  </resources>
  <connections/>
 </ui>
