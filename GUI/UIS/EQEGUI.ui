@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1006</width>
-    <height>676</height>
+    <height>690</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -207,22 +207,15 @@
         </item>
         <item row="2" column="0" colspan="2">
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_3">
+          <item row="2" column="2">
+           <widget class="QLabel" name="shutterStatusLabel">
             <property name="font">
              <font>
               <pointsize>16</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Shutter:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QPushButton" name="shutterCheckBtn">
-            <property name="text">
-             <string>Check?</string>
+             <string>?</string>
             </property>
            </widget>
           </item>
@@ -233,15 +226,22 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="shutterStatusLabel">
+          <item row="3" column="2">
+           <widget class="QPushButton" name="shutterCheckBtn">
+            <property name="text">
+             <string>Check?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
               <pointsize>16</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>?</string>
+             <string>Shutter:</string>
             </property>
            </widget>
           </item>
@@ -278,13 +278,13 @@
         <property name="minimumSize">
          <size>
           <width>64</width>
-          <height>64</height>
+          <height>32</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>64</width>
-          <height>64</height>
+          <height>32</height>
          </size>
         </property>
         <property name="font">
@@ -300,7 +300,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QGraphicsView" name="statusPictureView">
+       <widget class="QLabel" name="statusPictureView">
         <property name="minimumSize">
          <size>
           <width>64</width>
@@ -313,26 +313,8 @@
           <height>64</height>
          </size>
         </property>
-        <property name="toolTip">
-         <string>Staus?</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <property name="lineWidth">
-         <number>0</number>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="interactive">
-         <bool>false</bool>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </item>

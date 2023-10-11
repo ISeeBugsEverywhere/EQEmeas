@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+import Qt
+
 from GUI.EQEGUI import Ui_eqeWindow
 from PyQt5 import QtWidgets, QtCore, QtGui
 from HW.Oriel.OrielCS260USB import Oriel
 import time, math
 
 WAVE_LABEL_TEXT = "Current wave [nm]: {}"
+OK_PIC = "GUI/Icons/security-high.png"
+BAD_PIC = "GUI/Icons/security-low.png"
+STRANGE_PIC = "GUI/Icons/security-medium.png"
 import sys, os
 import numpy as np
 
@@ -15,6 +20,8 @@ class MainEqeApplication(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.signals()
         self.oriel = Oriel()
+        self.load_image(0) # at start - no problems?
+
 
     def signals(self):
         self.ui.connectBtnOriel.clicked.connect(self.connect_fn)
@@ -23,6 +30,7 @@ class MainEqeApplication(QtWidgets.QMainWindow):
         self.ui.shutterCheckBtn.clicked.connect(self.check_fn)
         self.ui.waveBtn.clicked.connect(self.wave_fn)
         self.ui.actionQuit.triggered.connect(self.quit_fn)
+        self.ui.connectBtn.clicked.connect(self.connect_all)
 
     def quit_fn(self):
         sys.exit(0)
@@ -33,11 +41,39 @@ class MainEqeApplication(QtWidgets.QMainWindow):
             self.ui.statusLabel.setText("CONNECTED")
             cw = self.oriel.wave()
             self.ui.waveLabel.setText(WAVE_LABEL_TEXT.format(cw))
+            self.ui.responsesField.appendPlainText(f"CONNECTED, status {r}")
+            return r
         elif r == 1:
             self.ui.responsesField.appendPlainText(f"NOT CONNECTED, status {r}")
+            return r
         else:
             self.ui.responsesField.appendPlainText(f"STRANGE::{r}")
+            return r
         pass
+
+    def connect_all(self):
+        s = self.connect_fn()
+        self.load_image(s)
+        pass
+
+    def load_image(self, status):
+        if status == 0:
+            qImage = QtGui.QImage(OK_PIC)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.statusPictureView.setPixmap(pixmap)
+            self.ui.statusPictureView.setScaledContents(True)
+        elif status == 1:
+            qImage = QtGui.QImage(BAD_PIC)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.statusPictureView.setPixmap(pixmap)
+            self.ui.statusPictureView.setScaledContents(True)
+        else:
+            qImage = QtGui.QImage(STRANGE_PIC)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.statusPictureView.setPixmap(pixmap)
+            self.ui.statusPictureView.setScaledContents(True)
+
+
 
     def go_fn(self):
         c_wave = float(self.oriel.wave())
