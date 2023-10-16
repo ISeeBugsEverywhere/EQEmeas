@@ -10,6 +10,12 @@ WAVE_LABEL_TEXT = "Current wave [nm]: {}"
 OK_PIC = "GUI/Icons/security-high.png"
 BAD_PIC = "GUI/Icons/security-low.png"
 STRANGE_PIC = "GUI/Icons/security-medium.png"
+ORIEL_OK = "GUI/Icons/oriel_ok.png"
+ORIEL_NO = "GUI/Icons/oriel_no.png"
+ORIEL_Q = "GUI/Icons/oriel_q.png"
+K_OK = "GUI/Icons/k_ok.png"
+K_Q = "GUI/Icons/k_q.png"
+K_NO = "GUI/Icons/k_no.png"
 import sys, os
 import numpy as np
 
@@ -21,6 +27,8 @@ class MainEqeApplication(QtWidgets.QMainWindow):
         self.signals()
         self.oriel = Oriel()
         self.load_image(0) # at start - no problems?
+        self.oriel_status()
+        self.sourcemeter_status()
 
 
     def signals(self):
@@ -35,7 +43,45 @@ class MainEqeApplication(QtWidgets.QMainWindow):
     def quit_fn(self):
         sys.exit(0)
 
+    def oriel_status(self, r=-1):
+        if r == 0:
+            qImage = QtGui.QImage(ORIEL_OK)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.oriel_status.setPixmap(pixmap)
+            self.ui.oriel_status.setScaledContents(True)
+        elif r == 1:
+            qImage = QtGui.QImage(ORIEL_NO)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.oriel_status.setPixmap(pixmap)
+            self.ui.oriel_status.setScaledContents(True)
+        else:
+            qImage = QtGui.QImage(ORIEL_Q)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.oriel_status.setPixmap(pixmap)
+            self.ui.oriel_status.setScaledContents(True)
+
+    def sourcemeter_status(self, r = -1):
+        if r == 0:
+            qImage = QtGui.QImage(K_OK)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.device_status.setPixmap(pixmap)
+            self.ui.device_status.setScaledContents(True)
+        elif r == 1:
+            qImage = QtGui.QImage(K_NO)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.device_status.setPixmap(pixmap)
+            self.ui.device_status.setScaledContents(True)
+        else:
+            qImage = QtGui.QImage(K_Q)
+            pixmap = QtGui.QPixmap.fromImage(qImage)
+            self.ui.device_status.setPixmap(pixmap)
+            self.ui.device_status.setScaledContents(True)
+
     def connect_fn(self):
+        """
+        connects oriel monochromator
+        :return: 0 - ok, 1 - no oriel
+        """
         r = self.oriel.setup()
         if r == 0:
             self.ui.statusLabel.setText("CONNECTED")
@@ -52,8 +98,9 @@ class MainEqeApplication(QtWidgets.QMainWindow):
         pass
 
     def connect_all(self):
-        s = self.connect_fn()
-        self.load_image(s)
+        oriel_status = self.connect_fn()
+        self.load_image(oriel_status)
+        self.oriel_status(oriel_status)
         pass
 
     def load_image(self, status):
